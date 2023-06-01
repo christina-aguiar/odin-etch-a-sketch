@@ -1,3 +1,18 @@
+const remake = document.querySelector('.remake');
+const inputRows = document.querySelector('input');
+const reset = document.querySelector('.reset');
+let numOfBlocks = inputRows.value; 
+
+reset.addEventListener('click', function() {
+    deleteAll();
+    inputRows.value = 0;
+    makeRows(inputRows.value);
+});
+
+remake.addEventListener('click', function() {
+    deleteAll();
+    makeRows(inputRows.value);
+});
 
 function makeRows(numOfBlocks) {
     for (i = 0; i < numOfBlocks; i++) {
@@ -14,4 +29,18 @@ function makeRows(numOfBlocks) {
         container.appendChild(block);
     }
 }
-}
+};
+
+function deleteAll() {
+    const containers = document.querySelectorAll('.container');
+    containers.forEach(Element => Element.remove());
+};
+
+
+
+/* function already applied to reset button
+function reset() {
+    const containers = document.querySelectorAll('.container');
+    containers.forEach(Element => Element.remove());
+    console.log(containers);
+}*/
