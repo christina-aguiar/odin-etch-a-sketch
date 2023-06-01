@@ -6,11 +6,13 @@ body {
     display: flex;
     height: fit-content;
     width: fit-content;
+    max-width: 100%;
     border: 2px solid;
+
 }
 
-.grid {
-    border: 1px solid;
+.block {
+    border: 2px solid;
     width: 50px;
     height: 50px;
 }
