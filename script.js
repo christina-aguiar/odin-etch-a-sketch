@@ -1,7 +1,4 @@
 
-let block;
-let container;
-
 function makeRows(numOfBlocks) {
     for (i = 0; i < numOfBlocks; i++) {
         const container = document.createElement('div');
@@ -11,6 +8,9 @@ function makeRows(numOfBlocks) {
         const block = document.createElement(`div`);
         block.classList.add("block");
         block.textContent = "";
+        block.addEventListener("mouseenter", function() {
+            block.classList.add('active')
+        })
         container.appendChild(block);
     }
 }
