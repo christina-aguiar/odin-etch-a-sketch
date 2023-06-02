@@ -1,34 +1,31 @@
 const remake = document.querySelector('.remake');
-const inputRows = document.querySelector('input');
-const reset = document.querySelector('.reset');
+const inputColumns = document.querySelector('.numOfColumns');
+const inputRows = document.querySelector('.numOfRows');
 const container = document.querySelector('.container')
-let numOfBlocks = inputRows.value;
+let numOfColumns = inputColumns.value;
+let numOfRows = inputRows.value;
 
-reset.addEventListener('click', function () {
-    deleteAll();
-    inputRows.value = 0;
-    makeRows(inputRows.value);
-});
 
 remake.addEventListener('click', function () {
     deleteAll();
-    makeRows(inputRows.value);
+    makeRows(inputColumns.value, inputRows.value);
 });
 
-function makeRows(numOfBlocks) {
-    if (numOfBlocks < 101) {
-    for (i = 0; i < numOfBlocks; i++) {
-        const row = document.createElement('div');
-        row.classList.add("row");
-        container.appendChild(row);
-        for (j = 0; j < numOfBlocks; j++) {
-            const block = document.createElement(`div`);
-            block.classList.add("block");
-            block.textContent = "";
-            block.addEventListener("mouseenter", function () {
-                block.classList.add('active')
+function makeRows(numOfColumns, numOfRows) {
+    if (numOfColumns < 101 ) {
+    for (i = 0; i < numOfColumns; i++) {
+        const column = document.createElement('div');
+        column.classList.add("column");
+        column.classList.add('block');
+        container.appendChild(column);
+        for (j = 0; j < numOfRows; j++) {
+            const row = document.createElement(`div`);
+            row.classList.add("block");
+            row.textContent = "";
+            row.addEventListener("mouseenter", function () {
+                row.classList.add('active')
             })
-            row.appendChild(block);
+            column.appendChild(row);
         }
     }
     }
@@ -38,8 +35,8 @@ function makeRows(numOfBlocks) {
 };
 
 function deleteAll() {
-    const rows = document.querySelectorAll('.row');
-    rows.forEach(Element => Element.remove());
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(Element => Element.remove());
 };
 
 
