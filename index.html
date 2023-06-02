@@ -11,10 +11,11 @@
 <body>
     <div class="options-container">
         <h1> Etch-A-Sketch</h1>
-        <p>choose the number of rows/columns</p>
-        <input type="number">
+        <p>choose the number of columns:</p>
+        <input type="number" min="1" max="100" value="16" class="numOfColumns">
+        <p>choose the number of rows per column:</p>
+        <input type="number" min="1" max="100" value="16" class="numOfRows">
         <button class="remake">Resize grid </button>
-        <button class="reset">Reset</button>
     </div>
     <div class="container">
     </div>
