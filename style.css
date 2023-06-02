@@ -14,7 +14,7 @@ body {
     flex-direction: column;
 }
 
-.row {
+.column {
     flex-basis: 100%;
     display: flex;
 }
