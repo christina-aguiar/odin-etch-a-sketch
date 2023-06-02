@@ -16,6 +16,7 @@ remake.addEventListener('click', function () {
 });
 
 function makeRows(numOfBlocks) {
+    if (numOfBlocks < 101) {
     for (i = 0; i < numOfBlocks; i++) {
         const row = document.createElement('div');
         row.classList.add("row");
@@ -29,6 +30,10 @@ function makeRows(numOfBlocks) {
             })
             row.appendChild(block);
         }
+    }
+    }
+    else {
+        alert('to avoid performance issues, choose a number below 100')
     }
 };
 
