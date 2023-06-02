@@ -8,10 +8,10 @@ let numOfRows = inputRows.value;
 
 remake.addEventListener('click', function () {
     deleteAll();
-    makeRows(inputColumns.value, inputRows.value);
+    makeGrid(inputColumns.value, inputRows.value);
 });
 
-function makeRows(numOfColumns, numOfRows) {
+function makeGrid(numOfColumns, numOfRows) {
     if (numOfColumns < 101 ) {
     for (i = 0; i < numOfColumns; i++) {
         const column = document.createElement('div');
@@ -39,11 +39,4 @@ function deleteAll() {
     columns.forEach(Element => Element.remove());
 };
 
-
-
-/* function already applied to reset button
-function reset() {
-    const containers = document.querySelectorAll('.container');
-    containers.forEach(Element => Element.remove());
-    console.log(containers);
-}*/
+makeGrid(numOfColumns, numOfRows);
