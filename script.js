@@ -16,7 +16,6 @@ function makeGrid(numOfColumns, numOfRows) {
     for (i = 0; i < numOfColumns; i++) {
         const column = document.createElement('div');
         column.classList.add("column");
-        column.classList.add('block');
         container.appendChild(column);
         for (j = 0; j < numOfRows; j++) {
             const row = document.createElement(`div`);

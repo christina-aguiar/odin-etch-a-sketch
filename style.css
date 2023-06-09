@@ -15,8 +15,8 @@ body {
 }
 
 .column {
-    flex-basis: 100%;
     display: flex;
+    flex-basis: 100%;
 }
 
 .block {
